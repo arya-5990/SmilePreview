@@ -1,0 +1,125 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 6%;
+    transition: var(--transition);
+}
+
+.navbar--scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 6%;
+    box-shadow: var(--shadow-sm);
+}
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar__logo-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.navbar__brand-smile {
+    font-weight: 600;
+}
+
+.navbar__brand-preview {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbar__link {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.navbar__link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+    color: var(--text-primary);
+}
+
+.navbar__link:hover::after,
+.navbar__link.active::after {
+    width: 100%;
+}
+
+.navbar__cta {
+    background: var(--text-primary);
+    color: var(--bg-secondary) !important;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.navbar__cta::after {
+    display: none !important;
+}
+
+.navbar__cta:hover,
+.navbar__cta.active {
+    background: var(--accent);
+    color: var(--bg-secondary) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        padding: 16px 24px;
+    }
+
+    .navbar--scrolled {
+        padding: 12px 24px;
+    }
+
+    .navbar__brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar__links {
+        gap: 20px;
+    }
+
+    .navbar__cta {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+}
