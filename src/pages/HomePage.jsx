@@ -30,9 +30,11 @@ export default function HomePage() {
                         Premium Aesthetic Preview
                     </div>
                     <h1 className="hero__title">
-                        Envision your <br />
-                        <span className="gradient-text">finest smile.</span>
+                        SmilePreview
                     </h1>
+                    <p className="hero__subtitle" style={{ fontSize: '1.5rem', marginBottom: '16px', color: 'var(--text-primary)', fontWeight: 500 }}>
+                        Envision your finest smile.
+                    </p>
                     <p className="hero__subtitle">
                         Experience the exceptional before you commit. We utilize state-of-the-art clinical imaging to provide a realistic preview of your potential dental transformation.
                     </p>
@@ -111,10 +113,6 @@ export default function HomePage() {
                     </Link>
                 </div>
             </section>
-
-            <footer className="footer">
-                <p>© 2026 Smile Preview · Advanced Dental Imaging Technology</p>
-            </footer>
         </main>
     );
 }
