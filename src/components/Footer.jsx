@@ -10,8 +10,8 @@ export default function Footer() {
                     <p className="footer-tagline">Visualize your personalized dental outcome.</p>
                 </div>
                 <div className="footer-links">
-                    <a href="/privacy.html" target="_blank" rel="noreferrer" className="footer-link">Privacy Policy</a>
-                    <a href="/terms.html" target="_blank" rel="noreferrer" className="footer-link">Terms of Service</a>
+                    <a href="/privacy" target="_blank" rel="noreferrer" className="footer-link">Privacy Policy</a>
+                    <a href="/terms" target="_blank" rel="noreferrer" className="footer-link">Terms of Service</a>
                 </div>
             </div>
             <div className="footer-bottom">
