@@ -13,6 +13,12 @@
 - **Exportable PDF Plans:** Seamlessly format and download customized clinical reports directly to PDF for offline reference. 
 - **Highly Secure and Fast Storage:** Client profiles and images are safely encrypted and hosted through Google Firebase Firestore and Cloud Storage.
 
+## 🔐 Google OAuth Verification Compliance
+This project is fully structured to meet the strict requirements for **Google Cloud Trust & Safety OAuth Consent Verification**. 
+- The App Name strictly matches **SmilePreview** across the homepage title and global interfaces.
+- Separate, functional `privacy.html` and `terms.html` legal documents are hosted on the public root.
+- A global footer is implemented to make these links visible from any site entry point.
+
 ## 🛠️ Technology Stack
 - **Framework:** React.js / Vite 
 - **Routing:** React Router DOM
