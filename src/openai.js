@@ -4,10 +4,9 @@
 // ──────────────────────────────────────────────────────────────────────────────
 import OpenAI from "openai";
 
-// Groq — vision analysis, routed via Vite proxy to avoid CORS
 const groq = new OpenAI({
     apiKey: import.meta.env.VITE_GROQ_API_KEY,
-    baseURL: `${window.location.origin}/groq/openai/v1`,
+    baseURL: import.meta.env.PROD ? "https://api.groq.com/openai/v1" : `${window.location.origin}/groq/openai/v1`,
     dangerouslyAllowBrowser: true,
 });
 
@@ -79,8 +78,12 @@ export async function generateAfterSmile(imageFile, treatments) {
     // Convert the image file to base64
     const base64Image = await fileToBase64(imageFile);
 
+    const geminiUrl = import.meta.env.PROD
+        ? "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent"
+        : `${window.location.origin}/gemini/v1beta/models/gemini-2.0-flash-exp:generateContent`;
+
     const response = await fetch(
-        `${window.location.origin}/gemini/v1beta/models/gemini-2.0-flash-exp:generateContent`,
+        geminiUrl,
         {
             method: "POST",
             headers: {
