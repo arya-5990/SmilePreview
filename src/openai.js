@@ -19,7 +19,7 @@ const groq = new OpenAI({
  */
 export async function analyzeSmile(base64Image, mimeType = "image/jpeg") {
     const response = await groq.chat.completions.create({
-        model: "meta-llama/llama-4-scout-17b-16e-instruct",
+        model: "llama-3.2-90b-vision-preview",
         messages: [
             {
                 role: "user",
@@ -80,7 +80,7 @@ export async function generateAfterSmile(imageFile, treatments) {
     const base64Image = await fileToBase64(imageFile);
 
     const response = await fetch(
-        `${window.location.origin}/gemini/v1beta/models/gemini-2.5-flash-image:generateContent`,
+        `${window.location.origin}/gemini/v1beta/models/gemini-2.0-flash-exp:generateContent`,
         {
             method: "POST",
             headers: {
