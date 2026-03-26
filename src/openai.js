@@ -1,6 +1,6 @@
 // ─── AI Services ──────────────────────────────────────────────────────────────
 // Vision Analysis  → Groq  (Llama 4 Scout Vision)      — Free
-// Image Editing    → Gemini (gemini-2.0-flash)      — Google AI credits
+// Image Editing    → Gemini (gemini-2.5-flash-image)      — Google AI credits
 // ──────────────────────────────────────────────────────────────────────────────
 import OpenAI from "openai";
 
@@ -79,8 +79,8 @@ export async function generateAfterSmile(imageFile, treatments) {
     const base64Image = await fileToBase64(imageFile);
 
     const geminiUrl = import.meta.env.PROD
-        ? "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
-        : `${window.location.origin}/gemini/v1beta/models/gemini-2.0-flash:generateContent`;
+        ? "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent"
+        : `${window.location.origin}/gemini/v1beta/models/gemini-2.5-flash-image:generateContent`;
 
     const response = await fetch(
         geminiUrl,
