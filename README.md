@@ -1,83 +1,68 @@
-# Smile Preview ✦
+Smile Preview | Advanced Clinical Visualization Engine
 
-> Smile Preview is a premium AI-powered clinical assessment tool that maps facial geometry and visualizes personalized dental outcomes. Features a frictionless image upload, automated structural analysis, and instant high-fidelity smile simulations formatted within a beautifully crafted, elegant UI.
+Executive Summary
 
-![Preview Cover](./public/hero-cover.jpg) <!-- Update with actual preview image path later -->
+Smile Preview is a high-fidelity, AI-driven diagnostic interface designed for modern dental practices. It leverages computer vision to map facial geometry and visualize restorative outcomes through a refined, editorial-grade user experience.
 
-## 🌟 Features
+By integrating generative AI with clinical assessment logic, the platform transitions traditional consultations into an aspirational, data-driven narrative.
 
-- **Pristine, Human-designed UI:** A stunning light-themed, high-contrast user interface that focuses on a premium editorial aesthetic. Handcrafted variables, clean animations, and sophisticated SVG icons replace generic mockups and emojis.
-- **Intelligent Facial Mapping:** Secure, drag-and-drop file upload to instantly capture portraits and map baseline structural aspects in mere seconds.
-- **Custom Dental Layouts & Insights:** Auto-generates a detailed dental assessment, summarizing visual focal points and recommended treatment blueprints dynamically pulled via OpenAI's GPT models.
-- **AI-Driven High-Fidelity Rendering:** Utilizes advanced AI image generation (OpenAI DALL-E) to produce robust, conceptual post-treatment visual outcomes tailored to selected focal points.
-- **Exportable PDF Plans:** Seamlessly format and download customized clinical reports directly to PDF for offline reference. 
-- **Highly Secure and Fast Storage:** Client profiles and images are safely encrypted and hosted through Google Firebase Firestore and Cloud Storage.
+Core Capabilities
+Clinical Facial Mapping
+A frictionless, drag-and-drop interface for high-resolution portrait capture and baseline structural symmetry analysis.
+Generative Outcome Simulation
+Utilizes specialized prompts via the OpenAI DALL-E API to produce high-fidelity, post-treatment visualizations tailored to specific patient anatomy.
+Automated Treatment Blueprints
+Synthesizes visual focal points into structured dental assessments, dynamically generated through GPT-4 logic.
+Encrypted Clinical Storage
+Full-stack integration with Google Firebase (Firestore and Cloud Storage) ensuring rapid, secure retrieval of patient media and metadata.
+Portable Diagnostic Reports
+On-the-fly PDF generation for clinical treatment plans, formatted for offline patient review and record-keeping.
+Compliance & OAuth Standards
 
-## 🔐 Google OAuth Verification Compliance
-This project is fully structured to meet the strict requirements for **Google Cloud Trust & Safety OAuth Consent Verification**. 
-- The App Name strictly matches **SmilePreview** across the homepage title and global interfaces.
-- Separate, functional `privacy.html` and `terms.html` legal documents are hosted on the public root.
-- A global footer is implemented to make these links visible from any site entry point.
+This architecture is strictly optimized for Google Cloud Trust & Safety verification:
 
-## 🛠️ Technology Stack
-- **Framework:** React.js / Vite 
-- **Routing:** React Router DOM
-- **Cloud Database / Storage:** Firebase (Firestore, Storage) 
-- **AI Integrations:** OpenAI API
-- **Styling:** Vanilla CSS3 (Custom Variables / Component-scoped CSS)
-- **Deployment:** Vercel (recommended)
+Brand Uniformity
+Global application naming conventions are synchronized across the OAuth consent screen and UI headers.
+Legal Transparency
+Functional privacy.html and terms.html documents are served from the public root and linked via a persistent global footer.
+Technical Architecture
+Layer	Technology	Implementation Detail
+Framework	React.js (Vite)	Component-based architecture for high-performance state management
+Styling	Vanilla CSS3	Custom property (Variables) system for a cohesive, light-themed design system
+Infrastructure	Firebase	Serverless backend handling Authentication, NoSQL data, and Blob storage
+Intelligence	OpenAI API	Multi-modal AI integration for both text-based analysis and image synthesis
+Design Philosophy
 
----
+The interface rejects generic templates in favor of a Pristine Clinical Aesthetic:
 
-## 🚀 Getting Started
+Typography
+Playfair Display for aspirational headings paired with Inter for functional, high-readability body text.
+Visual Language
+High-contrast light themes, custom SVG iconography, and refined micro-interactions (Skeleton screens and cubic-bezier transitions).
+Deployment & Configuration
+1. Environment Initialization
 
-Follow these instructions to set up the project locally.
+Clone the repository and install dependencies via the Node Package Manager:
 
-### Prerequisites
-Make sure you have Node.js installed, along with either npm, pnpm, or yarn.
-
-### 1. Clone the repository
-\`\`\`bash
 git clone https://github.com/your-username/smile-preview.git
 cd smile-preview
-\`\`\`
-
-### 2. Install Dependencies
-\`\`\`bash
 npm install
-\`\`\`
+2. Security Configuration
 
-### 3. Set up Environment Variables
-Create a \`.env\` (or \`.env.local\`) file in the root directory. You will need your Firebase configuration and an OpenAI API key.
+Construct a .env file in the root directory with the following authenticated endpoints:
 
-\`\`\`env
-# Firebase Configuration
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_firebase_app_id
+# Google Firebase Configuration
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+VITE_FIREBASE_PROJECT_ID=your_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
 
-# OpenAI integration
-VITE_OPENAI_API_KEY=your_openai_api_key
-\`\`\`
-
-*Note: Ensure your `src/firebase.js` and `src/openai.js` files map appropriately to these variables.*
-
-### 4. Run the Development Server
-\`\`\`bash
+# OpenAI Intelligence Configuration
+VITE_OPENAI_API_KEY=your_openai_key
+3. Development Execution
 npm run dev
-\`\`\`
-Navigate to `http://localhost:5173` in your browser.
+Developer Information
 
----
-
-## 🎨 Design Philosophy
-The recent pivot in design focuses on removing generic AI-styled templates in favor of a **hand-crafted, editorial, and clinical aesthetic**.
-* **Soft Light Theme:** `var(--bg-primary)` emphasizes clinical clarity.
-* **Refined Typography:** Headers rely on `Playfair Display` or rich variants to drive aspirational narratives, whilst body text leverages sharp, functional `Inter`.
-* **Subtle Micro-interactions:** Buttons glow on hover, image skeletons simulate processing natively, and smooth `fadeInUp` transitions give life to the assessment flow.
-
-## 📄 License
-MIT License. See `LICENSE` for more information.
+Arya Sharma
+Web Developer | Calanjiyam Consulting Technologies
+M.Tech IT Candidate | IIPS, DAVV
