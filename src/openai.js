@@ -1,6 +1,6 @@
 // ─── AI Services ──────────────────────────────────────────────────────────────
 // Vision Analysis  → Groq  (Llama 4 Scout Vision)      — Free
-// Image Editing    → Gemini (gemini-2.5-flash-image)      — Google AI credits
+// Image Editing    → Gemini (gemini-3-pro-image-preview)      — Google AI credits
 // ──────────────────────────────────────────────────────────────────────────────
 import OpenAI from "openai";
 
@@ -79,8 +79,8 @@ export async function generateAfterSmile(imageFile, treatments) {
     const base64Image = await fileToBase64(imageFile);
 
     const geminiUrl = import.meta.env.PROD
-        ? "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent"
-        : `${window.location.origin}/gemini/v1beta/models/gemini-2.5-flash-image:generateContent`;
+        ? "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent"
+        : `${window.location.origin}/gemini/v1beta/models/gemini-3-pro-image-preview:generateContent`;
 
     const response = await fetch(
         geminiUrl,
@@ -95,13 +95,13 @@ export async function generateAfterSmile(imageFile, treatments) {
                     {
                         parts: [
                             {
-                                text: `You are a dental image editor. Transform ONLY the teeth in this photo to show the result after receiving these treatments: ${treatmentList}.
+                                text: `You are an expert dental cosmetic image editor. Your task is to apply these treatments: ${treatmentList}, to the teeth in this photo.
 
-STRICT RULES:
-- Keep the person's face, skin tone, gender, age, eyes, hair, nose, lips EXACTLY the same
-- Only change the teeth: make them perfectly white, straight, well-aligned, and healthy-looking
-- Do NOT change anything else in the image
-- Output the full edited portrait image`,
+STRICT PHOTOREALISM RULES:
+1. PRESERVE ORIGINALITY: Keep the person's face, skin texture, pores, blemishes, lighting, gender, age, eyes, hair, nose, and lips EXACTLY the same.
+2. NO AI SMOOTHING: Absolutely NO airbrushing, plastic-looking skin, or "CGI" aesthetic. Maintain the raw, original photographic quality (like a mobile phone camera). 
+3. NATURAL TEETH: Make the teeth look naturally white, healthy, and straight, but avoid "glowing" unrealistic over-whitening. The lighting on the teeth must match the rest of the face.
+4. Output the full edited portrait image. Be invisible; the edit must look 100% real.`,
                             },
                             {
                                 inlineData: {
